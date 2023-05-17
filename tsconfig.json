@@ -1,0 +1,27 @@
+{
+	"compilerOptions": {
+		// Путь, куда производится сборка. Когда есть конфиг вэбпака, данный пункт неактуален
+		"outDir": "./dist/",
+		// Не позволять использовать переменные без явного указания типа
+		"noImplicitAny": true,
+		// Способ модульной сборки
+		"module": "ESNext",
+		// В какую спецификацию будет происходить компиляция (для поддержки большинства браузеров)
+		"target": "es5",
+		"jsx": "react",
+		// Компилятор будет обрабатывать не только TS-файлы, но и JS-файлы
+		"allowJs": true,
+		// Определяет какие импорты будут (node или classic). В 99% будет "node"
+		"moduleResolution": "node",
+		// esModuleInterop позволяет работать с пакетами, которые используют "common JS" (require()), через привычный import
+		"esModuleInterop": true,
+		// позволяет использовать дефолтные импорты без использования "*" (import * as React from 'react' --> import React from 'react)
+		"allowSyntheticDefaultImports": true
+	},
+	// т.к. в поле "module" установлено значение, отличное от "commonjs", необходимо сделать дополнительную настройку для пакета "ts-node"
+	"ts-node": {
+		"compilerOptions": {
+			"module": "CommonJS"
+		}
+	}
+}
