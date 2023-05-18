@@ -13,6 +13,8 @@
 		"allowJs": true,
 		// Определяет какие импорты будут (node или classic). В 99% будет "node"
 		"moduleResolution": "node",
+		// Для абсолютных импортов
+		"baseUrl": ".",
 		// esModuleInterop позволяет работать с пакетами, которые используют "common JS" (require()), через привычный import
 		"esModuleInterop": true,
 		// позволяет использовать дефолтные импорты без использования "*" (import * as React from 'react' --> import React from 'react)
