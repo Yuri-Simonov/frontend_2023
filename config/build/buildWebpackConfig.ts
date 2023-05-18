@@ -3,11 +3,12 @@ import type { BuildOptions } from "./types/config";
 import { buildPlugins } from "./buildPlugins";
 import { buildLoaders } from "./buildLoaders";
 import { buildResolvers } from "./buildResolvers";
+import { buildDevServer } from "./buildDevServer";
 
 export function buildWebpackConfig(
 	options: BuildOptions
 ): webpack.Configuration {
-	const { mode, paths } = options;
+	const { mode, paths, isDev } = options;
 
 	return {
 		// Режим разработки (production или development)
@@ -31,5 +32,9 @@ export function buildWebpackConfig(
 		},
 		// расширения файлов, у которых при импорте оно не будет указываться
 		resolve: buildResolvers(),
+		// Для отслеживания ошибок при разработке (при использовании webpack-dev-server)
+		devtool: isDev ? "inline-source-map" : undefined,
+		// Настройки самого dev-server
+		devServer: isDev ? buildDevServer(options) : undefined,
 	};
 }

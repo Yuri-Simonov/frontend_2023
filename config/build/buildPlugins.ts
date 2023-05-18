@@ -1,4 +1,4 @@
-import type { BuildOptions } from "config/build/types/config";
+import type { BuildOptions } from "./types/config";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import webpack from "webpack";
 
