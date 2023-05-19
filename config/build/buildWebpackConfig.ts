@@ -28,7 +28,7 @@ export function buildWebpackConfig(
 		plugins: buildPlugins(options),
 		module: {
 			// правила обработки файлов, выходящих за рамки JS
-			rules: buildLoaders(),
+			rules: buildLoaders(options),
 		},
 		// расширения файлов, у которых при импорте оно не будет указываться
 		resolve: buildResolvers(),

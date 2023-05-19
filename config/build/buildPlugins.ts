@@ -1,6 +1,7 @@
 import type { BuildOptions } from "./types/config";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import webpack from "webpack";
+import MiniCssExtractPlugin from "mini-css-extract-plugin"
 
 // Функция, возвращающая список плагинов вэбпака
 export function buildPlugins({
@@ -13,5 +14,10 @@ export function buildPlugins({
 		}),
 		// отображает в % прогресс сборки проекта
 		new webpack.ProgressPlugin(),
+		// создает файл CSS для каждого файла JS, для которого требуется CSS
+		new MiniCssExtractPlugin({
+			filename: 'css/[name].[contenthash:8].css',
+			chunkFilename: 'css/[name].[contenthash:8].css',
+		})
 	];
 }
