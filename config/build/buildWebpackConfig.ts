@@ -31,7 +31,7 @@ export function buildWebpackConfig(
 			rules: buildLoaders(options),
 		},
 		// расширения файлов, у которых при импорте оно не будет указываться
-		resolve: buildResolvers(),
+		resolve: buildResolvers(options),
 		// Для отслеживания ошибок при разработке (при использовании webpack-dev-server)
 		devtool: isDev ? "inline-source-map" : undefined,
 		// Настройки самого dev-server
