@@ -3,12 +3,12 @@ type Mods = any;
 
 export function classNames(
 	cls: string,
-	mods: Mods,
-	additional: string[]
+	mods: Mods = {},
+	additional: string[] = []
 ): string {
 	return [
 		cls,
-		...additional,
+		...additional.filter(Boolean),
 		...Object.keys(mods).filter((classNames) => mods[classNames]),
 	].join(" ");
 }
