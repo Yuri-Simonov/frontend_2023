@@ -9,5 +9,7 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
 		open: true,
 		// проксирование запросов через корневую страницу (чтобы на дочерних страницах, при перезагрузке не падало приложение с ошибкой при использовании SPA)
 		historyApiFallback: true,
+		// обновления без перезагрузки страницы
+		hot: true,
 	};
 }

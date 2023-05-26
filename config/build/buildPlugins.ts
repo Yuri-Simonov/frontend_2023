@@ -2,6 +2,7 @@ import type { BuildOptions } from "./types/config";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import webpack from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 
 // Функция, возвращающая список плагинов вэбпака
 export function buildPlugins({
@@ -24,5 +25,8 @@ export function buildPlugins({
 		new webpack.DefinePlugin({
 			__IS_DEV__: isDev,
 		}),
+		// обновления без перезагрузки страницы
+		isDev && new webpack.HotModuleReplacementPlugin(),
+		isDev && new ReactRefreshWebpackPlugin(),
 	];
 }
