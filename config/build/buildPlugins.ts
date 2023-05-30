@@ -26,7 +26,7 @@ export function buildPlugins({
 			__IS_DEV__: isDev,
 		}),
 		// обновления без перезагрузки страницы
-		isDev && new webpack.HotModuleReplacementPlugin(),
-		isDev && new ReactRefreshWebpackPlugin(),
+		new webpack.HotModuleReplacementPlugin(),
+		new ReactRefreshWebpackPlugin(),
 	];
 }

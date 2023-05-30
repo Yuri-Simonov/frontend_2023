@@ -24,6 +24,7 @@ export function buildWebpackConfig(
 			// чтобы при сборке приложение удалялось все лишнее (неактуальное)
 			clean: true,
 		},
+
 		// Подключаемые плагины
 		plugins: buildPlugins(options),
 		module: {
