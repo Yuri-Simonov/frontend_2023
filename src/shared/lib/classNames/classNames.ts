@@ -2,13 +2,13 @@ type Mods = any;
 // type Mods = Record<string, string | boolean>;
 
 export function classNames(
-	cls: string,
-	mods: Mods = {},
-	additional: string[] = []
+    cls: string,
+    mods: Mods = {},
+    additional: string[] = []
 ): string {
-	return [
-		cls,
-		...additional.filter(Boolean),
-		...Object.keys(mods).filter((classNames) => mods[classNames]),
-	].join(" ");
+    return [
+        cls,
+        ...additional.filter(Boolean),
+        ...Object.keys(mods).filter((classNames) => mods[classNames]),
+    ].join(" ");
 }

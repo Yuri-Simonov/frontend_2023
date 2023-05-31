@@ -9,25 +9,25 @@ interface SidebarProps {
 }
 
 export const Sidebar: React.FC<SidebarProps> = (props) => {
-	const { className } = props;
+    const { className } = props;
 
-	const [collapsed, setCollapsed] = useState(false);
+    const [collapsed, setCollapsed] = useState(false);
 
-	function onToggle(): void {
-		setCollapsed(!collapsed);
-	}
+    function onToggle(): void {
+        setCollapsed(!collapsed);
+    }
 
-	return (
-		<div
-			className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
-				className,
-			])}
-		>
-			<button onClick={onToggle}>toggle</button>
-			<div className={cls.switchers}>
-				<ThemeSwitcher />
-				<LangSwitcher />
-			</div>
-		</div>
-	);
+    return (
+        <div
+            className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
+                className,
+            ])}
+        >
+            <button onClick={onToggle}>toggle</button>
+            <div className={cls.switchers}>
+                <ThemeSwitcher />
+                <LangSwitcher />
+            </div>
+        </div>
+    );
 };

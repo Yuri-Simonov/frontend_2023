@@ -9,17 +9,17 @@ interface ThemeSwitcherProps {
 }
 
 export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = (props) => {
-	const { className } = props;
+    const { className } = props;
 
-	const { toggleTheme } = useTheme();
+    const { toggleTheme } = useTheme();
 
-	return (
-		<Button
-			theme={ThemeButton.CLEAR}
-			className={classNames(cls.themeSwitcher, {}, [className])}
-			onClick={toggleTheme}
-		>
-			<ThemeIcon className={classNames(cls.icon)} />
-		</Button>
-	);
+    return (
+        <Button
+            theme={ThemeButton.CLEAR}
+            className={classNames(cls.themeSwitcher, {}, [className])}
+            onClick={toggleTheme}
+        >
+            <ThemeIcon className={classNames(cls.icon)} />
+        </Button>
+    );
 };
