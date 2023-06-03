@@ -40,7 +40,8 @@
         "no-underscore-dangle": "off",
         "@typescript-eslint/ban-ts-comment": "warn",
         "react/prop-types": 1,
-        "i18next/no-literal-string": ["error", { "markupOnly": true }]
+        "i18next/no-literal-string": ["error", { "markupOnly": true }],
+        "max-len": ["error", { "ignoredComments": true }]
     },
     "settings": {
         "react": {
