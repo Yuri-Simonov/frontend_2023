@@ -4,7 +4,7 @@ import { classNames } from '../shared/lib/classNames/classNames';
 import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar/ui';
-import { Suspense, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 
 const App = () => {
     const { theme } = useTheme();

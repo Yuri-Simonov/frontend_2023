@@ -1,8 +1,8 @@
-import type { BuildOptions } from "./types/config";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import webpack from "webpack";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
+import type { BuildOptions } from './types/config';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import webpack from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 
 // Функция, возвращающая список плагинов вэбпака
 export function buildPlugins({
@@ -18,8 +18,8 @@ export function buildPlugins({
         new webpack.ProgressPlugin(),
         // создает файл CSS для каждого файла JS, для которого требуется CSS
         new MiniCssExtractPlugin({
-            filename: "css/[name].[contenthash:8].css",
-            chunkFilename: "css/[name].[contenthash:8].css",
+            filename: 'css/[name].[contenthash:8].css',
+            chunkFilename: 'css/[name].[contenthash:8].css',
         }),
         // позволяет прокидывать глобальные переменные в само приложение
         new webpack.DefinePlugin({
@@ -27,6 +27,6 @@ export function buildPlugins({
         }),
         // обновления без перезагрузки страницы
         new webpack.HotModuleReplacementPlugin(),
-        new ReactRefreshWebpackPlugin(),
+        new ReactRefreshWebpackPlugin({ overlay: false }),
     ];
 }
