@@ -3,11 +3,13 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 // Функция, возвращающая список плагинов вэбпака
 export function buildPlugins({
     paths,
     isDev,
+    analyze,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
     return [
         // создает HTML-файлы и подключает в него скрипты. За основу берется файл, путь к которому указан в поле "template"
@@ -28,5 +30,8 @@ export function buildPlugins({
         // обновления без перезагрузки страницы
         new webpack.HotModuleReplacementPlugin(),
         new ReactRefreshWebpackPlugin({ overlay: false }),
+        new BundleAnalyzerPlugin({
+            analyzerMode: analyze ? 'server' : 'disabled',
+        }),
     ];
 }
