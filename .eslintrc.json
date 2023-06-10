@@ -40,12 +40,21 @@
         "no-underscore-dangle": "off",
         "@typescript-eslint/ban-ts-comment": "warn",
         "react/prop-types": 1,
-        "i18next/no-literal-string": ["error", { "markupOnly": true }]
+        "i18next/no-literal-string": [
+            "error",
+            { "markupOnly": true, "ignoreAttribute": ["data-testid"] }
+        ]
     },
     "settings": {
         "react": {
             "version": "detect"
         }
     },
-    "root": true
+    "root": true,
+    "overrides": [
+        {
+            "files": ["**/src/**/*.test.{ts,tsx}"],
+            "rules": { "i18next/no-literal-string": "off" }
+        }
+    ]
 }
