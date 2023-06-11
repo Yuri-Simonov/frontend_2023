@@ -30,5 +30,10 @@
         }
     },
     // чтобы подружить настройки jest с ts
-    "include": ["src/**/*", "./config/jest/setupTest.ts"]
+    "include": [
+        "./src/**/*.tsx",
+        "./src/**/*.ts",
+        "./config/**/*",
+        "./webpack.config.ts"
+    ]
 }

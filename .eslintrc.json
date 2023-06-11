@@ -25,7 +25,9 @@
         "indent": [2, 4],
         "react/jsx-filename-extension": [
             2,
-            { "extensions": [".js", ".jsx", ".tsx"] }
+            {
+                "extensions": [".js", ".jsx", ".tsx"]
+            }
         ],
         "import/no-unresolved": "off",
         "import/prefer-default-export": "off",
@@ -42,8 +44,12 @@
         "react/prop-types": 1,
         "i18next/no-literal-string": [
             "error",
-            { "markupOnly": true, "ignoreAttribute": ["data-testid"] }
-        ]
+            {
+                "markupOnly": true,
+                "ignoreAttribute": ["data-testid", "to"]
+            }
+        ],
+        "react/display-name": "off"
     },
     "settings": {
         "react": {
@@ -54,7 +60,9 @@
     "overrides": [
         {
             "files": ["**/src/**/*.test.{ts,tsx}"],
-            "rules": { "i18next/no-literal-string": "off" }
+            "rules": {
+                "i18next/no-literal-string": "off"
+            }
         }
     ]
 }
