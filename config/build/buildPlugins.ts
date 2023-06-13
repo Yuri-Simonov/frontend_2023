@@ -9,9 +9,8 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 export function buildPlugins({
     paths,
     isDev,
-    analyze,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
-    return [
+    const plugins = [
         // создает HTML-файлы и подключает в него скрипты. За основу берется файл, путь к которому указан в поле "template"
         new HtmlWebpackPlugin({
             template: paths.html,
@@ -27,11 +26,14 @@ export function buildPlugins({
         new webpack.DefinePlugin({
             __IS_DEV__: isDev,
         }),
-        // обновления без перезагрузки страницы
-        new webpack.HotModuleReplacementPlugin(),
-        new ReactRefreshWebpackPlugin({ overlay: false }),
-        new BundleAnalyzerPlugin({
-            analyzerMode: analyze ? 'server' : 'disabled',
-        }),
     ];
+
+    if (isDev) {
+        // обновления без перезагрузки страницы
+        plugins.push(new webpack.HotModuleReplacementPlugin());
+        plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }));
+        plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
+    }
+
+    return plugins;
 }
