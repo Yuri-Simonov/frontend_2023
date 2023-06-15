@@ -1,13 +1,9 @@
 .sidebar {
+    position: relative;
     height: calc(100vh - var(--navbar-height));
     width: var(--sidebar-width);
     background: var(--inverted-bg-color);
-    position: relative;
     transition: 0.3s;
-}
-
-.collapsed {
-    width: var(--sidebar-width-collapsed);
 }
 
 .switchers {
@@ -18,4 +14,49 @@
     align-items: center;
     width: 100%;
     gap: 15px;
+}
+
+.collapseBtn {
+    position: absolute;
+    bottom: 32px;
+    right: -32px;
+}
+
+.items {
+    margin-top: 20px;
+    margin-left: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.link {
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.item {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon {
+    width: var(--font-line-l);
+    height: var(--font-line-l);
+}
+
+.collapsed {
+    width: var(--sidebar-width-collapsed);
+
+    .switchers {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .link {
+        opacity: 0;
+        width: 0;
+    }
 }
