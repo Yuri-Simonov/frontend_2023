@@ -24,3 +24,7 @@ yarn-error.log*
 
 # storybook
 /storybook-static
+
+#loki
+.loki/report.html
+.loki/report.json
