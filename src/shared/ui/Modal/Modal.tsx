@@ -58,9 +58,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
 
     return (
         <Portal>
-            <div
-                className={classNames(cls.modal, mods, [className, cls[theme]])}
-            >
+            <div className={classNames(cls.modal, mods, [className])}>
                 <div className={cls.overlay} onClick={closeHandler}>
                     <div className={cls.content} onClick={onContentClick}>
                         {children}
