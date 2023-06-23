@@ -35,6 +35,8 @@
         "./src/**/*.ts",
         "./config/**/*",
         "./webpack.config.ts",
-        "./scripts/*.js"
+        "./scripts/*.js",
+        // "./json-server/index.js"
+        "./json-server/index.js"
     ]
 }
